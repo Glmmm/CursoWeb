@@ -1,5 +1,5 @@
- <!--Listas-->
- <ul>
+<!--Listas Ordenadas-->
+<ul>
     <li>Item 1</li>
     <li>Item 2</li>
     <li>Item 3</li>
@@ -12,3 +12,34 @@
     <dd>Descrição do item 2</dd>
     <dt>Item 3</dt>
     <dd>Descrição do item 3</dd>
+</dl>
+<!--Listas Aninhadas-->
+<ul class="tree">
+<li> Descrição 1
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</li>
+<li> Descrição 2
+    <ul>
+        <li> Grupo 1
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+    </ul>
+
+</li>
+</ul>
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    document.querySelector('ul.tree').addEventListener('click', function(e){
+        if(e.target.tagName == 'LI'){
+            e.target.classList.toggle('open');
+        }
+    });
+</script>
