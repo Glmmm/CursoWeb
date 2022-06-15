@@ -14,32 +14,42 @@
     <dd>Descrição do item 3</dd>
 </dl>
 <!--Listas Aninhadas-->
-<ul class="tree">
-<li> Descrição 1
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ul>
-</li>
-<li> Descrição 2
-    <ul>
-        <li> Grupo 1
-            <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-            </ul>
-        </li>
-    </ul>
+<ul class="tree"> Lista
+    <li>
+        <span wm-folder>Descrição 1</span>
+        <ul class="tree">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </li>
+    <li>
+        <span wm-folder>Descrição 2</span>
+        <ul>
+            <li>
+                <span wm-folder>Grupo 1</span>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </li>
+        </ul>
 
-</li>
+    </li>
 </ul>
 <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
 <script>
-    document.querySelector('ul.tree').addEventListener('click', function(e){
-        if(e.target.tagName == 'LI'){
-            e.target.classList.toggle('open');
+    document.querySelectorAll('[wm-folder]').forEach(folder => {
+        folder.onclick = function (e) {
+        const ul = folder.nextElementSibling
+        if (ul.style.display == 'block') {
+            ul.style.display = 'none'
+        } else {
+            ul.style.display = 'block'
         }
-    });
+
+        }
+    })
+
 </script>

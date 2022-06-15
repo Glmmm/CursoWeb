@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
     <title>Testes - Curos Web</title>
 </head>
@@ -22,32 +22,27 @@
         <a href="tagsText.html">1 - Tags de Texto</a>
         <a href="lists.html">2 - Listas</a>
         <a href="tagsText.html">Navegação 3</a>
+        <a href="treeteste.html">tree</a>
     </nav>
     <h2>CSS</h2>
-    <hr>
+    <hr />
     <span id="principal">Texto 1</span>
     <span class="FundoNegrito"> Texto 2</span>
     <span class="FundoNegrito"> Texto 3</span>
-    <section id="conteudo">
-        Conteudo
-    </section>
-    <aside>
-        Lateral
-    </aside>
-    <footer>
-        Rodapé
-    </footer>
+    <section id="conteudo">Conteudo</section>
+    <aside>Lateral</aside>
+    <footer>Rodapé</footer>
     <script>
-        document.querySelectorAll('a').forEach(link => {
-            const conteudo = document.getElementById('conteudo')
+        document.querySelectorAll("a").forEach((link) => {
+            const conteudo = document.getElementById("conteudo");
 
             link.onclick = function (e) {
-                e.preventDefault()
+                e.preventDefault();
                 fetch(link.href)
-                    .then(resp => resp.text())
-                    .then(html => conteudo.innerHTML = html)
-            }
-        })
+                    .then((resp) => resp.text())
+                    .then((html) => (conteudo.innerHTML = html));
+            };
+        });
     </script>
 </body>
 
